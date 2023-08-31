@@ -1,0 +1,253 @@
+
+:root{
+    --color-orange: #FF6D1A;
+    --color-pink: #FFE7D9;
+    --color-brown: #1A0B03;
+    --color-red: #FC1F26;
+    --color-dark: #1A0B03;
+
+    --color-white: #ffffff;
+    --color-black: #000000;
+}
+*{
+    color: var(--color-dark);
+}
+a{
+    color: var(--color-dark);
+}
+.color-white{
+    color: var(--color-white);
+}
+img{
+    max-width: 100%;
+}
+.content_section_default{
+    padding: 100px 10px;
+}
+.content_middle{
+    max-width: 600px;
+}
+.title-default{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.text-default{
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.btn_orange{
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    padding: 6px 25px;
+    border-radius: 3px;
+    border: 1px solid var(--color-orange);
+    font-size: 1em;
+    margin: 0 2px;
+}
+.btn_transparent_orange{
+    padding: 6px 25px;
+    border-radius: 3px;
+    color: var(--color-orange);
+    border: 1px solid var(--color-orange);
+    margin: 0 2px;
+}
+.btn_large{
+    padding: 10px 90px;
+    border-radius: 5px;
+}
+.bg-pink{
+    background-color: var(--color-pink);
+}
+
+
+.header_content{
+    padding: 30px 10px;
+}
+header.header .logo_header a img{
+    max-width: 230px;
+}
+
+nav.menu{
+    display: flex;
+    align-items: center;
+}
+nav.menu ul{
+    display: flex;
+    align-items: center;
+}
+nav.menu ul li a{
+    padding: 5px 10px;
+    font-weight: 400;
+}
+.item_menu_active{
+    color: var(--color-orange);
+}
+.over_menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.section_filter{
+    background-color: var(--color-pink);
+    padding: 40px 10px;
+}
+.form_search{
+    display: flex;
+    width: 100%;
+}
+.form_search select{
+    flex-basis: 23%;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+    border: none;
+    background-color: var(--color-white);
+}
+.form_search button{
+    flex-basis: 6%;
+}
+.form_search button{
+    border-radius: 5px;
+    border: none;
+    background-color: var(--color-red);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+    color: var(--color-white);
+}
+.form_search button i{
+    color: var(--color-white);
+    font-size: 1.5em;
+}
+
+.section_insights{
+    background-color: var(--color-pink);
+}
+.content_section_insights{
+    padding: 60px 10px;
+    max-width: 1000px;
+    margin: auto;
+}
+.img_circle{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 15px;
+}
+.img_circle img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.img_circle span{
+    position: relative;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.over_img_circle{
+    margin: auto;
+}
+.row_img_circle{
+    padding: 20px 0;
+}
+.over_btn_orange_large{
+    padding: 20px 10px;
+}
+.img_fpam{
+    position: relative;
+    padding: 40px;
+}
+.img_fpam .img_float{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+}
+.img_fpam .img_normal{
+    position: relative;
+}
+.content_text_fpam h2{
+    width: 70%;
+}
+.content_text_fpam p{
+    width: 70%;
+}
+.img_sec{
+    position: relative;
+    padding: 40px;
+}
+.img_sec .img_float_bottom{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.img_sec .img_normal{
+    position: relative;
+}
+.content_section_contact{
+    padding: 100px 10px;
+}
+form.form_contact{
+    text-align: center;
+}
+form.form_contact input, form.form_contact textarea{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: var(--color-pink);
+    color: #343434;
+    outline: none;
+    margin: 20px 0;
+    border-radius: 3px;
+}
+form.form_contact button{
+    margin: 20px auto;
+}
+.over_form_contact h2{
+    width: 50%;
+}
+
+.social_contact{
+    padding-left: 80px;
+    padding-top: 20px;
+}
+.social_contact h2{
+    width: 100%;
+}
+.social_contact ul li{
+    display: flex;
+}
+.social_contact ul li a{
+    padding: 10px;
+}
+.social_contact ul li a img{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+footer.footer{
+    background-color: var(--color-brown);
+}
+footer.footer a{
+    color: var(--color-white);
+}
+footer.footer .title-default{
+    color: var(--color-white);
+}
+.content_footer{
+    padding: 80px 10px;
+}
+.list_social_footer a{
+    margin-right: 30px;
+}
+.col_contato{
+    padding-left: 60px;
+}
+.list_footer{
+    border-left: 1px solid var(--color-white);
+    padding-left: 10px;
+}
