@@ -5,9 +5,12 @@
     --color-brown: #1A0B03;
     --color-red: #FC1F26;
     --color-dark: #1A0B03;
+    --color-pink2: #FFCEB2;
 
     --color-white: #ffffff;
     --color-black: #000000;
+
+    --font-family-dm-sans: 'DM Sans', sans-serif;
 }
 *{
     color: var(--color-dark);
@@ -29,6 +32,10 @@ img{
 }
 .content_middle{
     max-width: 600px;
+}
+.container_1000{
+    max-width: 1000px;
+    margin: auto;
 }
 .title-default{
     font-size: 2.5em;
@@ -432,6 +439,57 @@ footer.footer .title-default{
 .content_section_journey{
     padding: 160px 10px 120px;
 }
+.row_circle{
+    padding: 100px 10px;
+}
+.p-80-10{
+    padding: 80px 10px;
+}
+
+
+.card_price{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 60px 5px;
+    border: 5px solid var(--color-pink2);
+    border-radius: 10px;
+    margin: 5px;
+}
+.card_price h3{
+    font-family: var(--font-family-dm-sans);
+}
+.card_price p.desc{
+    padding: 15px;
+    line-height: 1.3em;
+    font-weight: 400;
+}
+.card_info_price{
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.card_info_price p{
+    font-size: 32px;
+    margin: 0;
+    font-family: var(--font-family-dm-sans);
+    font-weight: 400;
+}
+.card_info_price p small{
+    font-size: 18px;
+    position: relative;
+}
+.card_info_price p small::before{
+    content: "";
+    width: 100%;
+    height: 2px;
+    border: none;
+    background-color: var(--color-red);
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+.header_prices{
+    margin-bottom: 40px;
+}
 
 
 @media(max-width: 1180px){
@@ -497,7 +555,7 @@ footer.footer .title-default{
     .header_mobile{
         display: flex;
         width: 100%;
-        padding: 30px 10px;
+        padding: 30px 15px;
         justify-content: space-between;
         align-items: center;
     }
@@ -629,5 +687,16 @@ footer.footer .title-default{
     }
     .mobile_text_center{
         text-align: center;
+    }
+    .p-80-10{
+        padding: 40px 10px;
+    }
+    .row_circle{
+        padding: 50px 10px;
+        text-align: center;
+    }
+    .img_insights{
+        margin: auto;
+        margin-bottom: 40px;
     }
 }
