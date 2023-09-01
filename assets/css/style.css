@@ -15,6 +15,9 @@
 a{
     color: var(--color-dark);
 }
+.color-orange{
+    color: var(--color-orange);
+}
 .color-white{
     color: var(--color-white);
 }
@@ -266,6 +269,171 @@ footer.footer .title-default{
     display: none;
 }
 
+
+/* carousel ========================= */
+.title_carousel{
+    width: 60%;
+    margin: auto;
+}
+.over_btn_carousel{
+    text-align: center;
+    padding: 40px 10px;
+}
+.carousel_top{
+    padding: 40px 10px;
+}
+.carousel_top .card_carousel_top{
+    height: 100%;
+}
+.owl-carousel .owl-stage{
+    display: flex;
+    align-items: flex-end;
+}
+.info_card_carousel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.info_card_carousel::before{
+    content: "";
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, var(--color-orange), transparent);
+}
+.carousel_top article.card_carousel_top a{
+    display: flex;
+    position: relative;
+}
+.carousel_top img.img_card_background{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel_top article.card_carousel_top .info_card_carousel .info_inner_card_carousel{
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--color-white);
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    padding: 10px;
+}
+.info_inner_card_carousel p{
+    color: var(--color-white);
+    margin: 0;
+    font-size: .9em;
+    line-height: 1em;
+    font-weight: 300;
+}
+.icon_card_carousel{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 90px!important;
+}
+.position_right{
+    right: 0!important;
+    left: unset!important;
+    border-radius: 10px 0 0 10px!important;
+    bottom: 50px!important;
+    width: 80%!important;
+}
+.carousel_top{
+    position: relative;
+}
+.carousel_top .owl-nav button{
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    font-size: 3em;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 109, 26, .5)!important;
+}
+.carousel_top .owl-nav button span{
+    font-size: 3em;
+    color: var(--color-white);
+}
+.carousel_top .owl-nav button.owl-next{
+    right: -50px!important;
+    left: unset;
+}
+/* carousel ========================= */
+
+
+
+.img_wi_full{
+    position: relative;
+    padding: 60px 0;
+}
+.img_wi_float{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.img_wi_center{
+    position: relative;
+    z-index: 1;
+}
+.img_wi_float_right{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.content_history{
+    padding: 100px 0 40px;
+}
+.img_hands{
+}
+.img_hands .img_float_bottom{
+    position: absolute;
+    bottom: 0;
+    left: -40px;
+    width: 100%;
+}
+.img_hands .img_normal{
+   position: absolute;
+   right: 80px;
+   bottom: 100px;
+   border: 3px solid var(--color-white);
+}
+.section_about{
+    padding:100px 0;
+}
+.img_float_journey{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 150%;
+}
+.right_journey .img_normal{
+    position: relative;
+    left: 40px;
+    bottom: 40px;
+    z-index: 1;
+}
+.content_section_who{
+    padding: 80px 10px;
+}
+.section_mission{
+    padding: 100px 10px 40px;
+}
+.content_section_journey{
+    padding: 160px 10px 120px;
+}
+
+
 @media(max-width: 1180px){
     nav.menu{
         display: none;
@@ -354,6 +522,13 @@ footer.footer .title-default{
     .title-default{
         font-size: 1.8em;
     }
+    .section_mission{
+        padding: 0 10px;
+    }
+    .img_hands .img_normal{
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 @media(max-width: 500px){
@@ -422,5 +597,37 @@ footer.footer .title-default{
     }
     .col_contato{
         padding: 10px;
+    }
+    .content_section_who{
+        padding: 60px 10px;
+    }
+    .content_history{
+        padding: 60px 0px 40px;
+    }
+    .img_hands .img_normal{
+        position: relative;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+    }
+    .img_hands .img_float_bottom{
+        left: 0;
+    }
+    .section_mission{
+        padding: 0 10px;
+    }
+    .mobile_pad_top{
+        padding-top: 40px;
+    }
+    .right_journey .img_normal{
+        left: 0;
+        bottom: 0;
+        margin: 40px 0;
+    }
+    .img_float_journey{
+        bottom: -20px;
+    }
+    .mobile_text_center{
+        text-align: center;
     }
 }
