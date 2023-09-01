@@ -40,7 +40,7 @@ $(document).ready(function(){
 
     items_carousel.forEach((item, index) => {
 
-        if((index % 2) == 0){
+        if((index % 2)!= 0){
 
             item.style.width = '80%';
             item.style.margin = 'auto';
