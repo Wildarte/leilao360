@@ -44,6 +44,10 @@ img{
     border: 1px solid var(--color-orange);
     font-size: 1em;
     margin: 0 2px;
+    text-decoration: none!important;
+}
+.btn_orange:hover{
+    color: var(--color-white);
 }
 .btn_transparent_orange{
     padding: 6px 25px;
@@ -51,6 +55,10 @@ img{
     color: var(--color-orange);
     border: 1px solid var(--color-orange);
     margin: 0 2px;
+    text-decoration: none!important;
+}
+.btn_transparent_orange:hover{
+    color: var(--color-orange);
 }
 .btn_large{
     padding: 10px 90px;
@@ -79,6 +87,9 @@ nav.menu ul{
 nav.menu ul li a{
     padding: 5px 10px;
     font-weight: 400;
+}
+nav.menu ul li a:hover{
+    color: var(--color-orange);
 }
 .item_menu_active{
     color: var(--color-orange);
@@ -250,4 +261,166 @@ footer.footer .title-default{
 .list_footer{
     border-left: 1px solid var(--color-white);
     padding-left: 10px;
+}
+.btn_menu_mobile, .header_mobile{
+    display: none;
+}
+
+@media(max-width: 1180px){
+    nav.menu{
+        display: none;
+    }
+    .btn_menu_mobile, .btn_close_menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-orange);
+        color: var(--color-orange);
+        border-radius: 2px;
+        background-color: transparent;
+        padding: 2px 6px;
+    }
+    .btn_menu_mobile i, .btn_close_menu i{
+        color: var(--color-orange);
+        font-size: 1.2em;
+    }
+    .header_content_inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav.menu{
+        position: fixed;
+        top: 0;
+        left: -110%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        z-index: 100;
+        background-color: var(--color-white);
+        box-shadow: 2px 2px 10px #343434;
+        transition: all .23s;
+    }
+    .open_menu{
+        left: 0!important;
+    }
+    nav.menu ul{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    nav.menu ul li{
+        width: 100%;
+        display: flex;
+    }
+    nav.menu ul li a{
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    .buttons_header{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .header_mobile{
+        display: flex;
+        width: 100%;
+        padding: 30px 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    form.form_search{
+        flex-wrap: wrap;
+    }
+    form.form_search select{
+        flex-basis: calc(50% - 10px);
+        margin: 5px;
+    }
+    form.form_search button{
+        flex-basis: 100%;
+        margin: 5px;
+        padding: 5px;
+    }
+}
+
+@media(max-width: 768px){
+    header.header .logo_header a img{
+        max-width: 190px;
+    }
+    .title-default{
+        font-size: 1.8em;
+    }
+}
+
+@media(max-width: 500px){
+    form.form_search select{
+        flex-basis: calc(100% - 10px);
+    }
+    .section_filter{
+        padding: 40px 10px 20px;
+    }
+    .content_section_insights{
+        padding: 20px 10px;
+    }
+    .content_section_default{
+        padding: 60px 10px;
+    }
+    .mobile_col_reverse{
+        flex-direction: column-reverse;
+    }
+    .content_text_fpam h2{
+        width: 100%;
+    }
+    .title-default{
+        font-size: 1.5em;
+        text-align: center;
+    }
+    .text-default{
+        font-size: 1em;
+    }
+    .content_text_fpam p{
+        width: 100%;
+        text-align: center;
+    }
+    .mobile_margin_auto{
+        margin: auto;
+    }
+    .mobile_margin_bottom_20{
+        margin-bottom: 20px;
+    }
+    .img_sec, .img_fpam{
+        padding: 20px;
+    }
+    .content_section_contact{
+        padding: 60px 10px;
+    }
+    .social_contact{
+        padding: 10px;
+    }
+    .social_contact ul{
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 30%;
+    }
+    .social_contact ul li{
+        width: 100%;
+        text-align: center;
+        display: flex;
+    }
+    .col_footer{
+        margin-bottom: 20px;
+    }
+    .list_social_footer{
+        display: flex;
+        justify-content: center;
+    }
+    .col_contato{
+        padding: 10px;
+    }
 }
