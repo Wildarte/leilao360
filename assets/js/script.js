@@ -102,17 +102,36 @@ $(document).ready(function(){
 const show_pass = document.getElementById('show_pass');
 const field_switch_pass = document.querySelector('.field_switch_pass');
 
-show_pass.addEventListener('click', () => {
+if(show_pass){
+    show_pass.addEventListener('click', () => {
 
-    if(field_switch_pass.getAttribute('type') == 'password'){
-        field_switch_pass.setAttribute('type', 'text');
-        show_pass.querySelector('i').classList.replace('bi-eye-fill','bi-eye-slash-fill')
-    }else{
-        field_switch_pass.setAttribute('type', 'password');
-        show_pass.querySelector('i').classList.replace('bi-eye-slash-fill','bi-eye-fill')
-    }
+        if(field_switch_pass.getAttribute('type') == 'password'){
+            field_switch_pass.setAttribute('type', 'text');
+            show_pass.querySelector('i').classList.replace('bi-eye-fill','bi-eye-slash-fill')
+        }else{
+            field_switch_pass.setAttribute('type', 'password');
+            show_pass.querySelector('i').classList.replace('bi-eye-slash-fill','bi-eye-fill')
+        }
+    
+    });
+}
 
-});
+const show_pass_confirm = document.getElementById('show_pass_confirm');
+const field_switch_pass_confirm = document.querySelector('.field_switch_pass_confirm');
+
+if(show_pass_confirm){
+    show_pass_confirm.addEventListener('click', () => {
+
+        if(field_switch_pass_confirm.getAttribute('type') == 'password'){
+            field_switch_pass_confirm.setAttribute('type', 'text');
+            show_pass_confirm.querySelector('i').classList.replace('bi-eye-fill','bi-eye-slash-fill')
+        }else{
+            field_switch_pass_confirm.setAttribute('type', 'password');
+            show_pass_confirm.querySelector('i').classList.replace('bi-eye-slash-fill','bi-eye-fill')
+        }
+    
+    });
+}
 //========================= page login ====================================
 
 

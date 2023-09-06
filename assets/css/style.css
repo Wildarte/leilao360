@@ -18,7 +18,9 @@
 a{
     color: var(--color-dark);
 }
-
+.p-40-10-0{
+    padding: 40px 10px 0;
+}
 .bg-orange{
     background-color: var(--color-orange);
 }
@@ -587,6 +589,7 @@ footer.footer .title-default{
     margin: auto;
     text-align: center;
     width: 450px;
+    padding-top: 150px;
 }
 .btn-login{
     width: 300px;
@@ -647,19 +650,55 @@ footer.footer .title-default{
     object-fit: cover;
 }
 .head_return_cad{
-    position: unset;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
+}
+.head_return_cad_logo{
+    position: absolute;
 }
 .btn_return_cad{
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 40px;
 }
 .btn_return_cad i{
     color: var(--color-white);
 }
 /* cadstro style =================== */
+
+
+
+/* ======= page recupera senha ============ */
+.form_over_recuver{
+    width: 600px;
+    margin: auto;
+    padding-top: 150px;
+}
+.form_over_recuver input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--color-pink);
+    text-align: center;
+}
+.head_img{
+    padding: 10px;
+}
+.recover_confirma{
+    flex-direction: column;
+    justify-content: center;
+}
+.recover_confirma img{
+    margin: auto;
+    margin-bottom: 20px;
+}
+/* ======= page recupera senha ============ */
+
 
 
 @media(max-width: 1180px){
@@ -747,14 +786,22 @@ footer.footer .title-default{
     .login_left{
         align-content: flex-start;
     }
-    .head_return{
+    .head_return_cad{
         margin-bottom: 40px;
-        position: unset;
         width: 100%;
     }
-    .form_over_login{
+    .form_over_cad{
         width: 100%;
         padding: 20px;
+    }
+    .form_over_cad{
+        padding-top: 140px;
+    }
+    .head_return_cad{
+        position: absolute!important;
+    }
+    .head_return_cad_return{
+        position: fixed!important;
     }
 }
 
@@ -783,10 +830,10 @@ footer.footer .title-default{
         min-height: 100vh;
     }
     .head_return{
-        width: 100%;
+        width: 100%!important;
     }
     .btn_return_cad{
-        position: fixed;
+        position: absolute;
         top: 10px;
         left: 10px;
         display: flex;
@@ -796,6 +843,17 @@ footer.footer .title-default{
     }
     .row_form{
         margin: 10px 0 10px;
+    }
+    .head_return_cad_return{
+        position: absolute!important;
+        z-index: 1;
+    }
+    .form_over_recuver{
+        width: 100%;
+    }
+
+    .head_img img{
+        width: 150px;
     }
 }
 
@@ -916,4 +974,11 @@ footer.footer .title-default{
     .head_return{
         position: unset;
     }
+    .form_over_login{
+        padding-top: 20px;
+    }
+    .form_over_cad{
+        padding-top: 140px;
+    }
+    
 }
