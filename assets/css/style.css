@@ -6,6 +6,7 @@
     --color-red: #FC1F26;
     --color-dark: #1A0B03;
     --color-pink2: #FFCEB2;
+    --color-abo: #FF9F68;
 
     --color-white: #ffffff;
     --color-black: #000000;
@@ -701,6 +702,61 @@ footer.footer .title-default{
 
 
 
+/* =============== page detalhes imóvel ================= */
+.head_imovel_details{
+    background-color: var(--color-abo);
+}
+.content_head_imovel_details{
+    padding: 10px 10px 20px;
+}
+.info_leilo{
+    padding: 10px 40px;
+    color: var(--color-white);
+}
+.info_leilo h3, .info_leilo a, .info_leilo p, .info_leilo span, .info_leilo strong{
+    color: var(--color-white)!important;
+}
+.info_leilo hr{
+    background-color: var(--color-white);
+}
+.lag-info{
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+.lag-info img{
+    margin-right: 10px;
+}
+.item_send_info{
+    max-width: 400px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 40px 0;
+}
+.item_send_info p{
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+}
+.sidebar_imovel{
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px solid var(--color-orange);
+    border-radius: 10px;
+    padding-bottom: 40px;
+}
+.info_sidebar_imovel{
+    padding: 40px;
+}
+.container_imovel{
+    padding: 80px 0;
+}
+
+
+
 @media(max-width: 1180px){
     nav.menu{
         display: none;
@@ -854,6 +910,12 @@ footer.footer .title-default{
 
     .head_img img{
         width: 150px;
+    }
+}
+
+@media(max-width: 600px){
+    .info_leilo{
+        padding: 20px 0;
     }
 }
 
