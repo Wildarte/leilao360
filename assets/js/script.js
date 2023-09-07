@@ -140,3 +140,23 @@ if(form_element_cad){
     form_element_cad.getBoundingClientRect().height;
 }
 
+
+
+
+//========== page glossario ===========================
+const switch_filter_segs = document.getElementById('switch_filter_segs');
+const segs_row = document.querySelector('.segs_row');
+
+if(switch_filter_segs){
+    switch_filter_segs.addEventListener('click', () => {
+
+        if(segs_row.classList.contains('open_filter_segs')){
+            segs_row.classList.remove('open_filter_segs')
+        }else{
+            segs_row.classList.add('open_filter_segs')
+        }
+    
+    });
+}
+
+//========== page glossario ===========================

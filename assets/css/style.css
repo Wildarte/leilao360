@@ -7,6 +7,7 @@
     --color-dark: #1A0B03;
     --color-pink2: #FFCEB2;
     --color-abo: #FF9F68;
+    --color-abo2: #FF8E4C;
 
     --color-white: #ffffff;
     --color-black: #000000;
@@ -15,6 +16,9 @@
 }
 *{
     color: var(--color-dark);
+}
+body{
+    overflow-x: hidden;
 }
 a{
     color: var(--color-dark);
@@ -25,6 +29,9 @@ a{
 .bg-orange{
     background-color: var(--color-orange);
 }
+.bg-abo2{
+    background-color: var(--color-abo2);
+}
 .b-0{
     border: 0;
 }
@@ -33,6 +40,9 @@ a{
 }
 .font-g{
     font-size: 2em;
+}
+.f-50{
+    flex-basis: 50%;
 }
 .p-10-20{
     padding: 10px 20px;
@@ -754,6 +764,256 @@ footer.footer .title-default{
 .container_imovel{
     padding: 80px 0;
 }
+/* =============== page detalhes imóvel ================= */
+
+
+
+/* =========== page Glossário ===================== */
+.top_glossario{
+    padding: 20px 10px;
+}
+.top_glossario h2{
+    margin: 0;
+}
+.form_search_glossario{
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.form_search_glossario input[type=search]{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+}
+.form_search_glossario button{
+    width: 50px;
+    border: none;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border-radius: 5px;
+}
+.form_search_glossario button i{
+    color: var(--color-white);
+    font-size: 1.4em;
+}
+
+.segs_row{
+    display: flex;
+    justify-content: center;
+    max-width: 800px;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    height: 0;
+}
+.segs_row .uni_segs_row{
+    padding: 2px 6px;
+    border: none;
+    background-color: var(--color-pink2);
+    text-transform: uppercase;
+    color: var(--color-black);
+    margin: 10px;
+    border-radius: 2px;
+}
+#switch_filter_segs{
+    font-size: .9em;
+    cursor: pointer;
+}
+.open_filter_segs{
+    padding: 60px 10px;
+    height: auto;
+    overflow: unset;
+}
+.title_segs{
+    font-size: 3em;
+    padding: 4px 15px;
+    background-color: var(--color-pink2);
+    border-radius: 5px;
+}
+.card_sigs{
+    flex-basis: calc(50% - 20px);
+    margin: 40px 10px;
+    border-left: 4px solid var(--color-orange);
+    padding: 0 30px;
+}
+.container_results_sigs{
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 10px;
+}
+.card_sigs h4{
+    text-transform: uppercase;
+}
+/* =========== page Glossário ===================== */
+
+
+
+
+/* ============== page filter ========================== */
+.form_filter_page{
+    padding: 40px 10px;
+}
+.row_side_filter{
+    padding: 10px 0;
+}
+.row_side_filter h5{
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.row_side_filter .form-check-label {
+    display: flex;
+    align-items: center;
+}
+.row_side_filter .form-check{
+    padding-left: 0;
+}
+
+
+.row_side_filter .form-check-label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+.row_side_filter .form-check-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+  
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 2px solid var(--color-abo);
+    border-radius: 5px;
+}
+  
+.row_side_filter .form-check-label:hover input ~ .checkmark {
+    background-color: transparent;
+}
+.row_side_filter .form-check-label input:checked ~ .checkmark {
+    background-color: var(--color-abo);
+}
+  
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.row_side_filter .form-check-label input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+.row_side_filter .form-check-label .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--color-abo);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.cat_filter{
+    background-color: var(--color-pink2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+    border-radius: 5px;
+    position: relative;
+    margin: 10px
+}
+.cat_filter i{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+.cat_filter p{
+    width: 100%;
+    text-align: center;
+    color: var(--color-black);
+    margin: 0;
+}
+.clean_filter_page{
+    border: none;
+    background-color: transparent;
+    color: var(--color-orange);
+}
+
+.card_search{
+    box-shadow: 0 5px 5px #343434;
+    border-radius: 10px;
+    margin: 20px 0px;
+}
+.info_card_search{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.head_card_search{
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--color-orange);
+    padding: 5px 0 10px;
+    margin-bottom: 5px;
+}
+.card_search .head_card_search h5{
+    text-transform: uppercase;
+}
+.add_card_search p{
+    font-size: .875em;
+}
+.info_lei{
+    display: flex;
+    align-items: flex-start;
+    padding: 5px 20px;
+}
+.info_lei .info_lei_card_search{
+    width: 60%;
+    padding: 5px;
+}
+.info_lei .info_lei_card_search p{
+    font-size: .875em;
+    margin: 0;
+    color: var(--color-white);
+    font-weight: 300;
+}
+.info_lei .info_lei_card_search h5{
+    font-size: .9em;
+    margin-bottom: 5px;
+    color: var(--color-white);
+}
+.info_lei .info_lei_card_search hr{
+    margin: 5px 0;
+    background-color: var(--color-white);
+}
+.info_lei img{
+    width: calc(40% - 10px);
+    height: auto;
+}
+/* ============== page filter ========================== */
 
 
 
@@ -858,6 +1118,9 @@ footer.footer .title-default{
     }
     .head_return_cad_return{
         position: fixed!important;
+    }
+    .form_filter_page{
+        padding: 40px 30px;
     }
 }
 
