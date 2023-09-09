@@ -153,6 +153,8 @@ nav.menu ul li a:hover{
 .form_search{
     display: flex;
     width: 100%;
+    max-width: 1000px;
+    margin: auto;
 }
 .form_search select{
     flex-basis: 23%;
@@ -962,6 +964,9 @@ footer.footer .title-default{
     color: var(--color-orange);
 }
 
+.over_card_search{
+    padding: 10px;
+}
 .card_search{
     box-shadow: 0 5px 5px #343434;
     border-radius: 10px;

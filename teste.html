@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Animação de Argola</title>
+    <style>
+#loading {
+  width: 50px;
+  height: 50px;
+  margin: 30px auto;
+  position: relative;
+}
+.outer-shadow,
+.inner-shadow {
+  z-index: 4;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.inner-shadow {
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  margin-left: -22px;
+  margin-top: -22px;
+  border-radius: 100%;
+  background-color: #ffffff;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.hold {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip: rect(0px, 50px, 50px, 25px);
+  border-radius: 100%;
+  background-color: #fff;
+}
+.fill,
+.dot span {
+  background-color: #f50;
+}
+.fill {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  clip: rect(0px, 25px, 50px, 0px);
+}
+.left .fill {
+  z-index: 1;
+  -webkit-animation: left 1s linear;
+  -moz-animation: left 1s linear;
+  animation: left 1s linear both;
+}
+@keyframes left {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes left {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+.right {
+  z-index: 3;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.right .fill {
+  z-index: 3;
+  -webkit-animation: right 1s linear;
+  -moz-animation: right 1s linear;
+  animation: right 1s linear both;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+@keyframes right {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes right {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+.inner-shadow img {
+  margin-left: 8px;
+  margin-top: 7px;
+}
+    </style>
+</head>
+<body>
+    <div id='loading'>
+        <div class='outer-shadow'>
+        </div>
+        <div class='inner-shadow'>
+        </div>
+        <div class='hold left'>
+          <div class='fill'></div>
+        </div>
+        <div class='hold right'>
+          <div class='fill'></div>
+        </div>
+    </div>
+
+
+    <style>
+        .m-circle{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 5px #343434;
+            background-color: #ffffff;
+            margin: auto;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+        }
+        .m-circle-inner{
+            width: 74px;
+            height: 74px;
+            border-radius: 50%;
+            margin: auto;
+            background-color: #ffffff;
+            z-index: 1;
+        }
+        .circle-left{
+            position: absolute;
+            clip: rect(0px, 1000px, 100px, 0px);
+            border-radius: 100%;
+            background-color: red;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border: 5px solid transparent; /* Bordas transparentes para começar */
+    border-radius: 50%; /* Torna o elemento redondo */
+    animation: pulse 2s linear infinite; /* Aplica a animação "pulse" */
+}
+
+@keyframes pulse {
+    0% {
+        border-width: 5px; /* Largura da borda inicial */
+    }
+    50% {
+        border-width: 20px; /* Largura da borda máxima */
+        border-color: #3498db; /* Cor da borda */
+    }
+    100% {
+        border-width: 5px; /* Largura da borda de volta ao início */
+    }
+}
+    </style>
+
+    <div class="m-circle">
+
+        <div class="m-circle-inner"></div>
+
+        <div class="circle-left"></div>
+    </div>
+
+    <div class="circle"></div>
+
+</body>
+</body>
+</html>
