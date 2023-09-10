@@ -112,89 +112,39 @@
     </style>
 </head>
 <body>
-    <div id='loading'>
-        <div class='outer-shadow'>
-        </div>
-        <div class='inner-shadow'>
-        </div>
-        <div class='hold left'>
-          <div class='fill'></div>
-        </div>
-        <div class='hold right'>
-          <div class='fill'></div>
-        </div>
-    </div>
 
+<script>
 
-    <style>
-        .m-circle{
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            box-shadow: 2px 2px 5px #343434;
-            background-color: #ffffff;
-            margin: auto;
-            display: flex;
-            position: relative;
-            overflow: hidden;
-        }
-        .m-circle-inner{
-            width: 74px;
-            height: 74px;
-            border-radius: 50%;
-            margin: auto;
-            background-color: #ffffff;
-            z-index: 1;
-        }
-        .circle-left{
-            position: absolute;
-            clip: rect(0px, 1000px, 100px, 0px);
-            border-radius: 100%;
-            background-color: red;
-            width: 100%;
-            height: 100%;
-        }
+	function AddHtmlElement()
+	{
+		var divElement = document.getElementById('MYDIV'); 
+		var divNumber= document.getElementById('hiddenValue'); 
+		var num = (document.getElementById('hiddenValue').value -1)+ 2; 
+		divNumber.value = num; 
+		var newdiv = document.createElement('div'); 
+		var divIdName = 'MYDIV'+num;
+		newdiv.setAttribute('id',divIdName); 
+		var divLoadedText='Div '+num+' Is Added!';	
+		divElement.appendChild(newdiv);
+		newdiv.innerHTML =divLoadedText+' '+'<a href="#"" onclick=RemoveHtmlElement("'+divIdName+'")>Remove div '+divIdName+'</a>';  
+	}
 
-        body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-}
+	function RemoveHtmlElement(divNum)
+	{ 
+		var divId = document.getElementById('MYDIV'); 
+		var childId = document.getElementById(divNum); 
+		divId.removeChild(childId); 
+	}
+  
+</script>
 
-.circle {
-    width: 200px;
-    height: 200px;
-    border: 5px solid transparent; /* Bordas transparentes para começar */
-    border-radius: 50%; /* Torna o elemento redondo */
-    animation: pulse 2s linear infinite; /* Aplica a animação "pulse" */
-}
-
-@keyframes pulse {
-    0% {
-        border-width: 5px; /* Largura da borda inicial */
-    }
-    50% {
-        border-width: 20px; /* Largura da borda máxima */
-        border-color: #3498db; /* Cor da borda */
-    }
-    100% {
-        border-width: 5px; /* Largura da borda de volta ao início */
-    }
-}
-    </style>
-
-    <div class="m-circle">
-
-        <div class="m-circle-inner"></div>
-
-        <div class="circle-left"></div>
-    </div>
-
-    <div class="circle"></div>
-
+<form id='Form1' >
+	<input id='hiddenValue' type='hidden' value='0'>
+	<p>
+		<a href='#' onclick='AddHtmlElement()'>Add Html Elements</a>
+	</p>
+	<div id='MYDIV'></div>
+</form>
 </body>
 </body>
 </html>

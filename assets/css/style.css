@@ -946,6 +946,9 @@ footer.footer .title-default{
     position: relative;
     margin: 10px
 }
+.cat_filter:hover{
+    cursor: pointer;
+}
 .cat_filter i{
     position: absolute;
     top: 10px;
@@ -993,7 +996,7 @@ footer.footer .title-default{
 .info_lei{
     display: flex;
     align-items: flex-start;
-    padding: 5px 20px;
+    padding: 5px 10px;
 }
 .info_lei .info_lei_card_search{
     width: 60%;
@@ -1019,6 +1022,29 @@ footer.footer .title-default{
     height: auto;
 }
 /* ============== page filter ========================== */
+
+
+
+/* ===================== btn loading ================ */
+.loader-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 10px solid var(--color-abo);
+    border-top-color: var(--color-orange);
+    animation: loader-circle 1s linear infinite;
+    margin: 30px;
+}
+  
+@keyframes loader-circle {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+/* ===================== btn loading ================ */
 
 
 

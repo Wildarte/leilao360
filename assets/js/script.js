@@ -165,7 +165,7 @@ if(switch_filter_segs){
 
 //================= page buscar imoveis ===================
 
-function createCardSearch(type, address, first_leilao = [], second_leilao = [], img_leiloeiro, nome_leiloeiro, desc_leiloeiro, link_imovel){
+function createCardSearch(type, address = [], first_leilao = [], second_leilao = [], img_leiloeiro, nome_leiloeiro, desc_leiloeiro, link_imovel){
 
     let over_card_search = document.createElement('div');
     over_card_search.classList.add('col-md-4', 'over_card_search');
@@ -181,7 +181,7 @@ function createCardSearch(type, address, first_leilao = [], second_leilao = [], 
             <img src="assets/img/star.png" alt="">
         </div>
         <div class="add_card_search">
-            <p><small>${address}</small></p>
+            <p><small>${address['city']} / ${address['uf']} - ${address['neighborhood']} ${address['number']}</small></p>
         </div>
         <div class="sin_card_search">
             <p>1º leilão R$ ${first_leilao['value']} - ${first_leilao['date']} às ${first_leilao['hour']}</p>
@@ -215,41 +215,171 @@ function createCardSearch(type, address, first_leilao = [], second_leilao = [], 
 
 }
 
+let count_cards = 0;
+function createFilterCard(cat){
+
+    count_cards++;
+
+    let cat_filter = document.createElement('article');
+    cat_filter.classList.add('cat_filter');
+
+    let divId = 'card'+count_cards;
+    cat_filter.setAttribute('id', divId);
+    cat_filter.setAttribute('onclick', 'removeFilter("'+divId+'")');
+
+    cat_filter.setAttribute('date-filter', cat)
+
+    cat_filter.innerHTML = `<i class="bi bi-x"></i><p>${cat}</p>`;
+
+    return cat_filter;
+
+    
+    
+}
+console.log('count_cards: '+count_cards);
+
 console.log(createCardSearch());
 
 var xhr = new XMLHttpRequest();
 var url = 'http://localhost/sites/leilao360/response.php';
 
-xhr.onload = function() {
-  if (xhr.readyState === 4 && xhr.status === 200) {
-    var data = JSON.parse(xhr.responseText);
+function loadContentFilter(){
 
-    console.log(data.results);
+    document.querySelector('.container_cards_search').innerHTML = ' <div class="loader-circle"></div>';
 
-    let result_imoveis = data.results;
-
-    console.log('imóveis encontrados: '+result_imoveis.length);
-
-    result_imoveis.forEach((element, index)=> {
-
-        //console.log('dentro do loop: '+element['address']); //teste
-        //console.log('decription leiloeiro: '+element['leiloeiro']['description']); //teste
-        console.log('leiloes: '+ element['leiloes'][1]['date']);
-
-        let elemento_card_search = createCardSearch(element['type'], element['address'], element['leiloes'][index], element['leiloes'][index], element['leiloeiro']['url_img'], element['leiloeiro']['name'], element['leiloeiro']['description'], element['link_imovel']);
-
-        document.querySelector('.container_cards_search').append(elemento_card_search);
+    try {
         
+    } catch (error) {
+        
+    }
+
+    xhr.onload = function() {
+
+        if (xhr.readyState === 4 && xhr.status === 200) {
+
+            document.querySelector('.container_cards_search').innerHTML = ' ';
+
+          var data = JSON.parse(xhr.responseText);
+      
+          console.log(data.results);
+      
+          let result_imoveis = data.results;
+      
+          console.log('imóveis encontrados: '+result_imoveis.length);
+      
+          result_imoveis.forEach((element, index)=> {
+
+                let leiloes = result_imoveis[index]['leiloes'];
+
+                console.log('qtd leiloes: '+leiloes.length);
+      
+                //console.log('dentro do loop: '+element['address']); //teste
+                //console.log('decription leiloeiro: '+element['leiloeiro']['description']); //teste
+                //console.log('leiloes: '+ element['leiloes'][1]['date']); //teste
+        
+                let elemento_card_search = createCardSearch(element['type'], element['address'], element['leiloes'][0], element['leiloes'][1], element['leiloeiro']['url_img'], element['leiloeiro']['name'], element['leiloeiro']['description'], element['link_imovel']);
+        
+                document.querySelector('.container_cards_search').append(elemento_card_search);
+
+                console.log('index: '+index);
+                //console.log('leiao 1 value: '+element['leiloes'][0]['value'])
+
+                const total_results = document.getElementById('total_results');
+                if(total_results) total_results.innerHTML = result_imoveis.length
+                
+
+          });
+      
+        }else{
+          console.log('errr');
+        }
+      };
+      
+      xhr.open('GET', url, true);
+      xhr.send();
+}
+
+loadContentFilter();
+
+
+const form_search_inputs = document.querySelectorAll('.form_filter_sidebar input');
+const form_check_label = document.querySelectorAll('.form_filter_sidebar .form-check-label');
+
+form_search_inputs.forEach((item) => {
+
+    item.addEventListener('change', () => {
+
+        console.log('valor: ', item.value);
+
+        item.disabled = true;
+
+        document.querySelector('.filters_card').append(createFilterCard(item.value));
+
+        /*
+        form_search_inputs.forEach((item2) => {
+            item2.disabled = true
+        });
+        form_check_label.forEach((item3) => {
+            item3.style.opacity = .5
+        });]
+        */
+
+       loadContentFilter();
+
     });
 
+});
 
-  }else{
-    console.log('errr')
-  }
-};
+const cat_filter = document.querySelectorAll('.filters_card .cat_filter');
+const filters_card = document.querySelector('.filters_card');
 
-xhr.open('GET', url, true);
-xhr.send();
+//const array_cat_filter = Array.from(cat_filter)
+
+cat_filter.forEach((item) => {
+
+    item.addEventListener('click', () => {
+
+       item.getAttribute('date-filter');
+
+       console.log('valor do date-filter: '+ item.getAttribute('date-filter'));
+
+    });
+
+});
+
+const btn_clean_filter = document.querySelectorAll('.btn_clean_filter');
+
+btn_clean_filter.forEach((item) => {
+
+    item.addEventListener('click', () => {
+
+        form_search_inputs.forEach((item2) => {
+            item2.checked = false;
+            item2.disabled = false;
+        });
+        document.querySelector('.filters_card').innerHTML = ""
+
+    });
+
+});
+
+
+function removeFilter(divId){
+    
+    let el = document.getElementById(divId);
+    let date_filter = el.getAttribute('date-filter');
+    filters_card.removeChild(el);
+
+    loadContentFilter();
+
+    form_search_inputs.forEach((item) => {
+        if(item.value == date_filter){
+            item.checked =  false;
+            item.disabled = false;
+        }
+    });
+}
+
 
 
 //================= page buscar imoveis ===================

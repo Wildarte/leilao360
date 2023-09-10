@@ -10,7 +10,13 @@ $data = array(
     'results' => [
         [
             'title' => 'Título',
-            'address' => 'Marechal Deodoro/ SP - Jabaquara 208',
+            'address' => [
+                'street' => 'Marechal Deodoro',
+                'number' => 208,
+                'city' => 'São Paulo',
+                'neighborhood' => 'Jabaquara',
+                'uf' => 'SP'
+            ],
             'type' => 'Apartamento',
             'leiloes' => [
                 [
@@ -30,12 +36,19 @@ $data = array(
                 'description' => 'Leiloeiro público do estado de São Paulo',
                 'url_img' => 'http://localhost/sites/leilao360/assets/img/user.png'
             ],
-            'link_imovel' => 'http://localhost/sites/leilao360/detalhes_imovel.html'
+            'link_imovel' => 'http://localhost/sites/leilao360/detalhes_imovel.html',
+            'category' => 'judicial'
         ],
         [
             'title' => 'Título',
-            'address' => 'Marechal Deodoro/ SP - Jabaquara 102',
-            'type' => 'Casa',
+            'address' => [
+                'street' => 'Marechal Deodoro',
+                'number' => 208,
+                'city' => 'São Paulo',
+                'neighborhood' => 'Jabaquara',
+                'uf' => 'SP'
+            ],
+            'type' => 'Apartamento',
             'leiloes' => [
                 [
                     'value' => '370.716,83',
@@ -52,9 +65,134 @@ $data = array(
             'leiloeiro' => [
                 'name' => 'José Antônio Carlos',
                 'description' => 'Leiloeiro público do estado de São Paulo',
-                'url_img' => 'https://cdn.pixabay.com/photo/2023/08/18/15/02/dog-8198719_1280.jpg'
+                'url_img' => 'http://localhost/sites/leilao360/assets/img/user.png'
             ],
-            'link_imovel' => 'http://localhost/sites/leilao360/detalhes_imovel.html'
+            'link_imovel' => 'http://localhost/sites/leilao360/detalhes_imovel.html',
+            'category' => 'judicial'
+        ],
+        [
+            'title' => 'Título',
+            'address' => [
+                'street' => 'Marechal Deodoro',
+                'number' => 208,
+                'city' => 'São Paulo',
+                'neighborhood' => 'Jabaquara',
+                'uf' => 'SP'
+            ],
+            'type' => 'Apartamento',
+            'leiloes' => [
+                [
+                    'value' => '370.716,83',
+                    'date' => '14/08/2023',
+                    'hour' => '14:42'
+                ],
+                [
+                    'value' => '312.434,01',
+                    'date' => '16/08/2023',
+                    'hour' => '14:42'
+                ]
+
+            ],
+            'leiloeiro' => [
+                'name' => 'José Antônio Carlos',
+                'description' => 'Leiloeiro público do estado de São Paulo',
+                'url_img' => 'http://localhost/sites/leilao360/assets/img/user.png'
+            ],
+            'link_imovel' => 'http://localhost/sites/leilao360/detalhes_imovel.html',
+            'category' => 'judicial'
+        ],
+        [
+            'title' => 'Título',
+            'address' => [
+                'street' => 'Marechal Deodoro',
+                'number' => 208,
+                'city' => 'São Paulo',
+                'neighborhood' => 'Jabaquara',
+                'uf' => 'SP'
+            ],
+            'type' => 'Apartamento',
+            'leiloes' => [
+                [
+                    'value' => '370.716,83',
+                    'date' => '14/08/2023',
+                    'hour' => '14:42'
+                ],
+                [
+                    'value' => '312.434,01',
+                    'date' => '16/08/2023',
+                    'hour' => '14:42'
+                ]
+
+            ],
+            'leiloeiro' => [
+                'name' => 'José Antônio Carlos',
+                'description' => 'Leiloeiro público do estado de São Paulo',
+                'url_img' => 'http://localhost/sites/leilao360/assets/img/user.png'
+            ],
+            'link_imovel' => 'http://localhost/sites/leilao360/detalhes_imovel.html',
+            'category' => 'judicial'
+        ],
+        [
+            'title' => 'Título',
+            'address' => [
+                'street' => 'Marechal Deodoro',
+                'number' => 208,
+                'city' => 'São Paulo',
+                'neighborhood' => 'Jabaquara',
+                'uf' => 'SP'
+            ],
+            'type' => 'Apartamento',
+            'leiloes' => [
+                [
+                    'value' => '370.716,83',
+                    'date' => '14/08/2023',
+                    'hour' => '14:42'
+                ],
+                [
+                    'value' => '312.434,01',
+                    'date' => '16/08/2023',
+                    'hour' => '14:42'
+                ]
+
+            ],
+            'leiloeiro' => [
+                'name' => 'José Antônio Carlos',
+                'description' => 'Leiloeiro público do estado de São Paulo',
+                'url_img' => 'http://localhost/sites/leilao360/assets/img/user.png'
+            ],
+            'link_imovel' => 'http://localhost/sites/leilao360/detalhes_imovel.html',
+            'category' => 'judicial'
+        ],
+        [
+            'title' => 'Título',
+            'address' => [
+                'street' => 'Marechal Deodoro',
+                'number' => 208,
+                'city' => 'São Paulo',
+                'neighborhood' => 'Jabaquara',
+                'uf' => 'SP'
+            ],
+            'type' => 'Apartamento',
+            'leiloes' => [
+                [
+                    'value' => '370.716,83',
+                    'date' => '14/08/2023',
+                    'hour' => '14:42'
+                ],
+                [
+                    'value' => '312.434,01',
+                    'date' => '16/08/2023',
+                    'hour' => '14:42'
+                ]
+
+            ],
+            'leiloeiro' => [
+                'name' => 'José Antônio Carlos',
+                'description' => 'Leiloeiro público do estado de São Paulo',
+                'url_img' => 'http://localhost/sites/leilao360/assets/img/user.png'
+            ],
+            'link_imovel' => 'http://localhost/sites/leilao360/detalhes_imovel.html',
+            'category' => 'judicial'
         ]
     ]
 );
