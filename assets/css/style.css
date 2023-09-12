@@ -1103,6 +1103,14 @@ footer.footer .title-default{
         width: 100%;
         text-align: center;
     }
+    .dropdown-menu.show{
+        position: unset!important;
+        width: 100%;
+        transform: unset!important;
+    }
+    .nav-item.dropdown.show{
+        flex-wrap: wrap;
+    }
     .buttons_header{
         width: 100%;
         display: flex;
@@ -1210,6 +1218,11 @@ footer.footer .title-default{
 @media(max-width: 600px){
     .info_leilo{
         padding: 20px 0;
+    }
+    .card_sigs{
+        flex-basis: 100%;
+        padding: 0 10px;
+        margin: 20px 0;
     }
 }
 

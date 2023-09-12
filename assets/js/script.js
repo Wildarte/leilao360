@@ -245,58 +245,60 @@ var url = 'http://localhost/sites/leilao360/response.php';
 
 function loadContentFilter(){
 
-    document.querySelector('.container_cards_search').innerHTML = ' <div class="loader-circle"></div>';
+    if(document.querySelector('.container_cards_search')){
+        document.querySelector('.container_cards_search').innerHTML = ' <div class="loader-circle"></div>';
 
-    try {
-        
-    } catch (error) {
-        
-    }
-
-    xhr.onload = function() {
-
-        if (xhr.readyState === 4 && xhr.status === 200) {
-
-            document.querySelector('.container_cards_search').innerHTML = ' ';
-
-          var data = JSON.parse(xhr.responseText);
-      
-          console.log(data.results);
-      
-          let result_imoveis = data.results;
-      
-          console.log('imóveis encontrados: '+result_imoveis.length);
-      
-          result_imoveis.forEach((element, index)=> {
-
-                let leiloes = result_imoveis[index]['leiloes'];
-
-                console.log('qtd leiloes: '+leiloes.length);
-      
-                //console.log('dentro do loop: '+element['address']); //teste
-                //console.log('decription leiloeiro: '+element['leiloeiro']['description']); //teste
-                //console.log('leiloes: '+ element['leiloes'][1]['date']); //teste
-        
-                let elemento_card_search = createCardSearch(element['type'], element['address'], element['leiloes'][0], element['leiloes'][1], element['leiloeiro']['url_img'], element['leiloeiro']['name'], element['leiloeiro']['description'], element['link_imovel']);
-        
-                document.querySelector('.container_cards_search').append(elemento_card_search);
-
-                console.log('index: '+index);
-                //console.log('leiao 1 value: '+element['leiloes'][0]['value'])
-
-                const total_results = document.getElementById('total_results');
-                if(total_results) total_results.innerHTML = result_imoveis.length
-                
-
-          });
-      
-        }else{
-          console.log('errr');
+        try {
+            
+        } catch (error) {
+            
         }
-      };
-      
-      xhr.open('GET', url, true);
-      xhr.send();
+
+        xhr.onload = function() {
+
+            if (xhr.readyState === 4 && xhr.status === 200) {
+
+                document.querySelector('.container_cards_search').innerHTML = ' ';
+
+            var data = JSON.parse(xhr.responseText);
+        
+            console.log(data.results);
+        
+            let result_imoveis = data.results;
+        
+            console.log('imóveis encontrados: '+result_imoveis.length);
+        
+            result_imoveis.forEach((element, index)=> {
+
+                    let leiloes = result_imoveis[index]['leiloes'];
+
+                    console.log('qtd leiloes: '+leiloes.length);
+        
+                    //console.log('dentro do loop: '+element['address']); //teste
+                    //console.log('decription leiloeiro: '+element['leiloeiro']['description']); //teste
+                    //console.log('leiloes: '+ element['leiloes'][1]['date']); //teste
+            
+                    let elemento_card_search = createCardSearch(element['type'], element['address'], element['leiloes'][0], element['leiloes'][1], element['leiloeiro']['url_img'], element['leiloeiro']['name'], element['leiloeiro']['description'], element['link_imovel']);
+            
+                    document.querySelector('.container_cards_search').append(elemento_card_search);
+
+                    console.log('index: '+index);
+                    //console.log('leiao 1 value: '+element['leiloes'][0]['value'])
+
+                    const total_results = document.getElementById('total_results');
+                    if(total_results) total_results.innerHTML = result_imoveis.length
+                    
+
+            });
+        
+            }else{
+            console.log('errr');
+            }
+        };
+        
+        xhr.open('GET', url, true);
+        xhr.send();
+    }
 }
 
 loadContentFilter();
