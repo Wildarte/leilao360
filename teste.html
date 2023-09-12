@@ -195,7 +195,7 @@
     width: 100%;
     height: 100%;
     border-radius: 0 0 0 0;
-    animation: gira_right 1700ms linear forwards;
+    /*animation: gira_right 1700ms linear forwards;*/
   }
   .circle-right::after{
     content: "";
@@ -215,10 +215,9 @@
     border-radius: 50%;
     background-color: transparent;
     z-index: 1;
-    animation: gira_right 1700ms linear forwards 1700ms;
-
+    /*gira_right 1700ms  linear forwards 1700ms*/
   }
-  .circle-left::after{
+  .circle-left .after{
     content: "";
     width: 50%;
     height: 100%;
@@ -226,10 +225,10 @@
     top: 0;
     left: 0;
     background-color: #fff;
-    animation: transpa 0s linear forwards 1700ms;
+    /*animation: transpa 0s linear forwards 1700ms;*/
   }
 
-  .circle-left::before{
+  .circle-left .before{
     content: "";
     position: absolute;
     right: 0;
@@ -237,7 +236,16 @@
     width: 50%;
     height: 100%;
     background-color: transparent;
+    /*animation: color_red 0s linear forwards 1700ms;*/
+  }
+
+
+
+  .add_circle_left::before{
     animation: color_red 0s linear forwards 1700ms;
+  }
+  .add_circle_left:after{
+    animation: transpa 0s linear forwards 1700ms;
   }
 
   @keyframes gira_right {
@@ -261,37 +269,108 @@
 
 </style>
 
+ 
+
   <div class="circle">
 
-    <div class="circle-left"></div>
-
-    <div class="inner-circle">
-      600
+    <div class="circle-left">
+      <div class="before"></div>
+      <div class="after"></div>
     </div>
+
+    <div class="inner-circle" data-number="4000"></div>
+    
+    <div class="circle-right"></div>
+
+  </div>
+
+  <div class="circle">
+
+    <div class="circle-left">
+      <div class="before"></div>
+      <div class="after"></div>
+    </div>
+
+    <div class="inner-circle" data-number="600"></div>
+    
+    <div class="circle-right"></div>
+
+  </div>
+
+  <div class="circle">
+
+    <div class="circle-left">
+      <div class="before"></div>
+      <div class="after"></div>
+    </div>
+
+    <div class="inner-circle" data-number="450"></div>
     
     <div class="circle-right"></div>
 
   </div>
 
   <script>
-    let contador = 0;
+    
 
-    let value = 600
+    const circles = document.querySelectorAll('.circle');
 
-function aumentarContador() {
+    circles.forEach((item) => {
+
+      let contador = 0;
+
+      function aumentarContador() {
+
+        let value = item.querySelector('.inner-circle').getAttribute('data-number');
+
+        let value_ms = Math.round((1000/400)*value);
+
+        console.log('value calc: '+value_ms);
+
+        item.querySelector('.circle-right').style.animation = "gira_right "+value_ms+"ms linear forwards"
+        item.querySelector('.circle-left').style.animation = "gira_right "+value_ms+"ms linear forwards "+value_ms+"ms";
+        item.querySelector('.circle-left .after').style.animation = "transpa 0s linear forwards "+value_ms+"ms";
+        item.querySelector('.circle-left .before').style.animation = "color_red 0s linear forwards "+value_ms+"ms";
+
+        if (contador < value) {
+          contador++;
+          item.querySelector('.inner-circle').innerHTML = contador
+          setTimeout(aumentarContador, (1000/value)); // Aumenta a cada segundo (1000 ms)
+        } else {
+        }
+        console.log('calc: '+ (1000/value)*value);
+      }
+
+      aumentarContador();
+  });
+
+/*
+function aumentarContador(element) {
+
+  let value = document.querySelector('.'+element+' .inner-circle').getAttribute('data-number');
+
+  let value_ms = Math.round((1000/350)*value);
+
+  console.log('value calc: '+value_ms);
+
+  document.querySelector('.'+element+' .circle-right').style.animation = "gira_right "+value_ms+"ms linear forwards"
+  document.querySelector('.'+element+' .circle-left').style.animation = "gira_right "+value_ms+"ms linear forwards "+value_ms+"ms";
+  document.querySelector('.'+element+' .circle-left .after').style.animation = "transpa 0s linear forwards "+value_ms+"ms";
+  document.querySelector('.'+element+' .circle-left .before').style.animation = "color_red 0s linear forwards "+value_ms+"ms";
+
   if (contador < value) {
     contador++;
     document.querySelector('.inner-circle').innerHTML = contador
     setTimeout(aumentarContador, (1000/value)); // Aumenta a cada segundo (1000 ms)
   } else {
-    console.log("Contador atingiu 100 e parou.");
   }
+  console.log('calc: '+ (1000/350)*value);
 }
 
-console.log('calc: '+ (1000/350)*value);
+//console.log('calc: '+ (1000/350)*value);
 
-aumentarContador();
-
+//aumentarContador('circle');
+*/
   </script>
 </body>
 </html>

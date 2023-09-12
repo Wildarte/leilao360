@@ -1048,6 +1048,125 @@ footer.footer .title-default{
 
 
 
+/* ================= style circles ======================= */
+.circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .circle::before{
+    content: "";
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    border: 7px solid rgba(255, 109, 26, .3);
+    z-index: 100;
+  }
+
+  .inner-circle{
+    width: calc(100% - 14px);
+    height: calc(100% - 14px);
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 1;
+  }
+
+  .circle-right{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 0 0;
+    /*animation: gira_right 1700ms linear forwards;*/
+  }
+  .circle-right::after{
+    content: "";
+    width: 50%;
+    height: 100%;
+    background-color: #FF9F68;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .circle-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: 1;
+    /*gira_right 1700ms  linear forwards 1700ms*/
+  }
+  .circle-left .after{
+    content: "";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    /*animation: transpa 0s linear forwards 1700ms;*/
+  }
+
+  .circle-left .before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+    /*animation: color_red 0s linear forwards 1700ms;*/
+  }
+
+
+
+  .add_circle_left::before{
+    animation: color_red 0s linear forwards 1700ms;
+  }
+  .add_circle_left:after{
+    animation: transpa 0s linear forwards 1700ms;
+  }
+
+  @keyframes gira_right {
+    from{
+      transform: rotate(0);
+    }
+    to{
+      transform: rotate(180deg);
+    }
+  }
+  @keyframes transpa {
+    to{
+      background-color: transparent;
+    }
+  }
+  @keyframes color_red {
+    to{
+      background-color: #FF9F68;
+    }
+  }
+/* ================= style circles ======================= */
+
+
+
 @media(max-width: 1180px){
     nav.menu{
         display: none;
@@ -1334,7 +1453,7 @@ footer.footer .title-default{
     }
     .img_insights{
         margin: auto;
-        margin-bottom: 40px;
+        margin-bottom: 0px;
     }
     .card_price{
         height: auto;

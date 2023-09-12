@@ -385,3 +385,83 @@ function removeFilter(divId){
 
 
 //================= page buscar imoveis ===================
+
+
+//===================== animation circle =================================================
+const circles = document.querySelectorAll('.circle');
+
+circles.forEach((item) => {
+
+  let contador = 0;
+
+  if(isOnScreen(item)){
+    function aumentarContador() {
+
+        let value = item.querySelector('.inner-circle').getAttribute('data-number');
+    
+        let value_ms = Math.round((1000/400)*value);
+    
+        console.log('value calc: '+value_ms);
+    
+        item.querySelector('.circle-right').style.animation = "gira_right "+value_ms+"ms linear forwards"
+        item.querySelector('.circle-left').style.animation = "gira_right "+value_ms+"ms linear forwards "+value_ms+"ms";
+        item.querySelector('.circle-left .after').style.animation = "transpa 0s linear forwards "+value_ms+"ms";
+        item.querySelector('.circle-left .before').style.animation = "color_red 0s linear forwards "+value_ms+"ms";
+    
+        if (contador < value) {
+          contador++;
+          item.querySelector('.inner-circle').innerHTML = contador
+          setTimeout(aumentarContador, (1000/value)); // Aumenta a cada segundo (1000 ms)
+        } else {
+        }
+        console.log('calc: '+ (1000/value)*value);
+      }
+    
+      aumentarContador();
+  }
+  
+});
+
+addEventListener('scroll', () => {
+
+    circles.forEach((item) => {
+
+        let contador = 0;
+      
+        if(isOnScreen(item) && !item.classList.contains('already_show')){
+
+            item.classList.add('already_show');
+
+          function aumentarContador() {
+      
+              let value = item.querySelector('.inner-circle').getAttribute('data-number');
+          
+              let value_ms = Math.round((1000/400)*value);
+          
+              console.log('value calc: '+value_ms);
+          
+              item.querySelector('.circle-right').style.animation = "gira_right "+value_ms+"ms linear forwards"
+              item.querySelector('.circle-left').style.animation = "gira_right "+value_ms+"ms linear forwards "+value_ms+"ms";
+              item.querySelector('.circle-left .after').style.animation = "transpa 0s linear forwards "+value_ms+"ms";
+              item.querySelector('.circle-left .before').style.animation = "color_red 0s linear forwards "+value_ms+"ms";
+          
+              if (contador < value) {
+                contador++;
+                item.querySelector('.inner-circle').innerHTML = contador
+                setTimeout(aumentarContador, (1000/value)); // Aumenta a cada segundo (1000 ms)
+              } else {
+              }
+              console.log('calc: '+ (1000/value)*value);
+            }
+          
+            aumentarContador();
+        }
+        
+      });
+});
+
+function isOnScreen(el){
+    let rect = el.getBoundingClientRect();
+    return rect.top > 0 && rect.bottom < window.innerHeight;
+}
+//===================== animation circle =================================================
